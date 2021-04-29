@@ -15,7 +15,6 @@
             nome: document.getElementById("txtNome").value,
             categoria: document.getElementById("selCategoria").value
         }
-        debugger;
         HTTPClient.post("/Produto/Gravar", dados)
             .then(result => {
                 
@@ -23,10 +22,10 @@
             })
             .then(dados => {
 
-                alert(dados.msg);
+                document.getElementById("gravou").innerHTML = dados.msg;
             })
             .catch(() => {
-                console.log("Deu erro no Produto/Gravar");
+                console.log("Falha ao Gravar");
             });
 
     },
