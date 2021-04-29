@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EFZCvbc2Tx3Re6OKm7IFqzU8rIrza3LZfl59cE23OkI4JuGSoLkKkIG3ArtKCZFreZZCVNUYHFoNm1RVQZOo2Q==",
+  "dgSpecHash": "XQ2MDNt/143Todj9OPNAL/qgPjQRR9mWK5vlkP8pCBF4x59A/GXLeQO+Fnxl//jm+8HbVWCzZtl/ysY/RdRVnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Leonardo\\Downloads\\Trabalho\\Trabalho\\Trabalho.csproj",
+  "projectFilePath": "C:\\Users\\Leonardo\\Documents\\GitHub\\ECommerce-LP4\\Trabalho\\Trabalho.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Leonardo\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Leonardo\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
