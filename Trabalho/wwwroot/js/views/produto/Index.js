@@ -4,7 +4,7 @@
         //aqui vai tudo o que é necessário para a página funcionar no início.
 
         let selCategoria = document.getElementById("selCategoria")
-        selCategoria.innerHTML = "<option>carregando...</option>";
+        selCategoria.innerHTML = "<option>Carregando...</option>";
         indexProduto.obterCategorias();
 
     },
@@ -21,13 +21,18 @@
                 return result.json();
             })
             .then(dados => {
-
-                document.getElementById("gravou").innerHTML = dados.msg;
+                if (dados.msg == "Falha ao Gravar Produto!") {
+                    document.getElementById("gravou").innerHTML = "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><i class='fa fa-times-circle'></i> Falha ao Gravar Produto!</div>";
+                }
+                else {
+                    document.getElementById("gravou").innerHTML = "<div class='alert alert-success alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><i class='fa fa-check-circle'></i> Produto " + dados.nome + " Gravado com Sucesso!</div>";
+                }
             })
             .catch(() => {
                 console.log("Falha ao Gravar");
             });
-
+        document.getElementById("txtNome").value = "";
+        document.getElementById("selCategoria").value = "";
     },
 
     obterCategorias: () => {

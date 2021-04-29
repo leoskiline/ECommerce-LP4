@@ -25,7 +25,8 @@ namespace Trabalho.Controllers
                 msg = proDal.Gravar(nome,categoria);
             return Json(new
             {
-                msg
+                msg,
+                nome
             });
 
         }
