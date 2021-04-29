@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+    ViewData["TituloPrincipal"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    int n = 9;
+    int res;
+    <h4>Tabuada do @n</h4>
+    for(int i = 1;i<=10;i++)
+    {
+        res = n * i;
+        <p>@n x @i = @res </p>
+    }
+}
+

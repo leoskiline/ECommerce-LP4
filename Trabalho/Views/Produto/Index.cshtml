@@ -1,0 +1,29 @@
+﻿@page
+@model Trabalho.Views.Produto.IndexModel
+@{
+}
+
+<h4>Cadastro de Produto</h4>
+<br />
+<div class="row">
+    <form class="form-inline" onload="indexProduto.init()">
+        <div class="form-group">
+            <input type="text" class="form-control" id="txtNome" placeholder="Digite o Nome do Produto" />
+        </div>
+        <div class="form-group">
+            <select class="form-control" style="color:darkgray" id="selCategoria">
+                <option>Selecionar um Produto</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="button" class="btn-success" value="Cadastrar" onclick="indexProduto.enviar()" />
+        </div>
+    </form>
+</div>
+
+<!-- /.row (main row) -->
+
+@section javascript {
+    <script src="~/js/views/produto/Index.js"></script>
+    <script src="~/lib/HTTPClient.js"></script>
+}
