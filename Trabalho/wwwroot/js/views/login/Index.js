@@ -49,7 +49,10 @@ let indexLogin = {
             .then((dados) => {
 
                 if (!dados.sucesso)
-                    document.getElementById("divMsg").innerHTML = dados.msg;
+                    document.getElementById("divMsg").innerHTML = "<div class=\"alert alert-danger alert-dismissible fade in\">"+
+                        "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">×</a>"+
+                        "<strong>Erro!</strong> "+dados.msg+
+                        "</div>"
                 else location.href = "/Home/Index";
 
             })

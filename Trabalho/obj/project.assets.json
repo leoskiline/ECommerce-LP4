@@ -7058,24 +7058,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Leonardo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\leonardo.custodio\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leonardo\\Documents\\GitHub\\ECommerce-LP4\\Trabalho\\Trabalho.csproj",
+      "projectUniqueName": "C:\\Users\\leonardo.custodio\\Documents\\GitHub\\ECommerce-LP4\\Trabalho\\Trabalho.csproj",
       "projectName": "Trabalho",
-      "projectPath": "C:\\Users\\Leonardo\\Documents\\GitHub\\ECommerce-LP4\\Trabalho\\Trabalho.csproj",
-      "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leonardo\\Documents\\GitHub\\ECommerce-LP4\\Trabalho\\obj\\",
+      "projectPath": "C:\\Users\\leonardo.custodio\\Documents\\GitHub\\ECommerce-LP4\\Trabalho\\Trabalho.csproj",
+      "packagesPath": "C:\\Users\\leonardo.custodio\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\leonardo.custodio\\Documents\\GitHub\\ECommerce-LP4\\Trabalho\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Leonardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\leonardo.custodio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
