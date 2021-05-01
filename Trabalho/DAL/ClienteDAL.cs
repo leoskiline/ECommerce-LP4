@@ -21,7 +21,8 @@ namespace Trabalho.DAL
             ps.Add("@senha", senha);
             _bd.AbrirConexao();
             dt = _bd.ExecutarSelect(sql, ps);
-            if(dt.Rows.Count > 0)
+            _bd.FecharConexao();
+            if (dt.Rows.Count > 0)
             {
                 cli = new Models.Cliente()
                 {
@@ -29,7 +30,6 @@ namespace Trabalho.DAL
                     Senha = dt.Rows[0]["Senha"].ToString(),
                 };
             }
-            _bd.FecharConexao();
             return cli;
         }
     }

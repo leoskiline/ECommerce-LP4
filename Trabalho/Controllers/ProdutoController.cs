@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Trabalho.Models;
 using Trabalho.Services;
 
 namespace Trabalho.Controllers
@@ -17,16 +18,27 @@ namespace Trabalho.Controllers
 
         public IActionResult Gravar([FromBody] System.Text.Json.JsonElement dados)
         {
-            string msg = "Falha ao Gravar Produto!";
-            ProdutoDAL proDal = new ProdutoDAL();
-            string nome = dados.GetProperty("nome").ToString();
-            string categoria = dados.GetProperty("categoria").ToString();
-            if(nome.Length > 0 && categoria.Length>0 && nome.Length < 45)
-                msg = proDal.Gravar(nome,categoria);
+            ProdutoService prodcs = new ProdutoService();
+            Produto prod = new Produto();
+            if (dados.GetProperty("categoria").ToString() != "" && dados.GetProperty("categoria").ToString() != "Carregando...")
+            {
+                prod.Nome = dados.GetProperty("nome").ToString();
+                prod.Categoria = new Categoria
+                {
+                    Id = Convert.ToInt32(dados.GetProperty("categoria").ToString())
+                };
+                if(dados.GetProperty("prodId").ToString() != "")
+                    prod.Id = Convert.ToInt32(dados.GetProperty("prodId").ToString());
+            }
+            string msg;
+            int id;
+            (id,msg) = prodcs.Gravar(prod);
+            string nome = prod.Nome;
             return Json(new
             {
                 msg,
-                nome
+                nome,
+                id
             });
 
         }

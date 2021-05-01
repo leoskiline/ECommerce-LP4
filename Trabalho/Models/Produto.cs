@@ -10,25 +10,31 @@ namespace Trabalho.Models
         int _id;
         string _nome;
         int _quantidade;
-        ProdutoTipo _tipo;
         decimal _precoVenda;
+        Categoria _categoria;
 
-        public Produto(int id, string nome, int quantidade, ProdutoTipo tipo, decimal precoVenda)
+        public int Id { get => _id; set => _id = value; }
+        public string Nome { get => _nome; set => _nome = value; }
+        public int Quantidade { get => _quantidade; set => _quantidade = value; }
+        public decimal PrecoVenda { get => _precoVenda; set => _precoVenda = value; }
+        public Categoria Categoria { get => _categoria; set => _categoria = value; }
+
+        public Produto(int id, string nome, int quantidade, decimal precoVenda, Categoria tipo)
         {
-            _id = id;
-            _nome = nome;
-            _quantidade = quantidade;
-            _tipo = new ProdutoTipo();
-            _precoVenda = precoVenda;
+            Id = id;
+            Nome = nome;
+            Quantidade = quantidade;
+            PrecoVenda = precoVenda;
+            Categoria = new Categoria();
         }
 
         public Produto()
         {
-            _id = 0;
-            _nome = "";
-            _quantidade = 0;
-            _tipo = new ProdutoTipo();
-            _precoVenda = 0;
+            Id = 0;
+            Nome = "";
+            Quantidade = 0;
+            PrecoVenda = 0;
+            Categoria = new Categoria();
         }
     }
 }
