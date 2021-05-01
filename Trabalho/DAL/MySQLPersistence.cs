@@ -55,8 +55,15 @@ namespace Trabalho.DAL
                     _comando.Parameters.AddWithValue(item.Key, item.Value);
                 }
             }
-
-            int rows = _comando.ExecuteNonQuery();
+            int rows;
+            try
+            {
+                rows = _comando.ExecuteNonQuery();
+            }
+            catch(MySqlException e)
+            {
+                rows = 0;
+            }
             return rows;
         }
 

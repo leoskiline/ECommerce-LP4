@@ -13,6 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Categoria\Listar.cshtml" />
+    <None Include="wwwroot\js\views\categoria\Listar.js" />
     <None Include="wwwroot\js\views\login\Index.js" />
     <None Include="wwwroot\js\views\produto\Index.js" />
   </ItemGroup>

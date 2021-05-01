@@ -19,5 +19,14 @@ namespace Trabalho.Services
                 (id,msg) = proDal.Gravar(produto);
             return (id,msg);
         }
+
+        public IEnumerable<Models.Produto> ObterTodos()
+        {
+            ProdutoDAL prod = new ProdutoDAL();
+
+            List<Models.Produto> prods = prod.ObterTodos();
+
+            return prods.AsEnumerable();
+        }
     }
 }

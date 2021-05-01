@@ -16,6 +16,11 @@ namespace Trabalho.Controllers
             return View();
         }
 
+        public IActionResult Listar()
+        {
+            return View();
+        }
+
         public IActionResult Gravar([FromBody] System.Text.Json.JsonElement dados)
         {
             ProdutoService prodcs = new ProdutoService();
@@ -50,6 +55,13 @@ namespace Trabalho.Controllers
 
             CategoriaService cs = new CategoriaService();
             return Json(cs.ObterTodos());
+        }
+
+        [HttpGet]
+        public IActionResult ObterTodos()
+        {
+            ProdutoService pcs = new ProdutoService();
+            return Json(pcs.ObterTodos());
         }
 
     }

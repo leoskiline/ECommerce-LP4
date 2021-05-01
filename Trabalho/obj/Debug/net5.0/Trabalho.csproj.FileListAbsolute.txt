@@ -1240,3 +1240,5 @@ C:\Users\leonardo.custodio\Documents\GitHub\ECommerce-LP4\Trabalho\obj\Debug\net
 C:\Users\leonardo.custodio\Documents\GitHub\ECommerce-LP4\Trabalho\obj\Debug\net5.0\ref\Trabalho.dll
 C:\Users\leonardo.custodio\Documents\GitHub\ECommerce-LP4\Trabalho\obj\Debug\net5.0\Trabalho.pdb
 C:\Users\leonardo.custodio\Documents\GitHub\ECommerce-LP4\Trabalho\obj\Debug\net5.0\Trabalho.genruntimeconfig.cache
+C:\Users\Leonardo\Documents\GitHub\ECommerce-LP4\Trabalho\obj\Debug\net5.0\Razor\Views\Categoria\Listar.cshtml.g.cs
+C:\Users\Leonardo\Documents\GitHub\ECommerce-LP4\Trabalho\obj\Debug\net5.0\Razor\Views\Produto\Listar.cshtml.g.cs

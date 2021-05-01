@@ -16,5 +16,13 @@ namespace Trabalho.Services
 
             return cats.AsEnumerable();
         }
+
+        public bool Excluir(int id)
+        {
+            bool sucesso;
+            CategoriaDAL ctgdal = new CategoriaDAL();
+            sucesso = ctgdal.Excluir(id);
+            return sucesso;
+        }
     }
 }

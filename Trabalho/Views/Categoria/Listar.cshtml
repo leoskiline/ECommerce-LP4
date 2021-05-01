@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Listar Categorias</h1>
+
+<div class="mt-5 d-none" id="divResultado">
+
+    <table class="table table-striped table-hover table-sm">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="bodyResultado">
+            <!--Carregado por ajax-->
+        </tbody>
+    </table>
+</div>
+
+
+@section javascript {
+    <script src="~/lib/HTTPClient.js"></script>
+    <script src="~/js/views/categoria/Listar.js"></script>
+} 

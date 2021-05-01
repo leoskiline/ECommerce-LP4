@@ -30,5 +30,19 @@ namespace Trabalho.DAL
 
             return categorias;
         }
+
+        public bool Excluir(int id)
+        {
+            bool sucesso = false;
+            string sql = "DELETE FROM categoria WHERE categoriaId = @id";
+            _bd.LimparParametros();
+            _bd.AdicionarParametro("@id", id.ToString());
+            _bd.AbrirConexao();
+            int rows = _bd.ExecutarNonQuery(sql);
+            _bd.FecharConexao();
+            if (rows > 0)
+                sucesso = true;
+            return sucesso;
+        }
     }
 }

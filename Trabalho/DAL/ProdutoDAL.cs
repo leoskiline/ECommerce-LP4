@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Trabalho.DAL;
@@ -50,6 +51,33 @@ namespace ecommerce.DAL
             i = Convert.ToInt32(_bd.ExecutarConsultaSimples(sql));
             return i;
             
+        }
+
+        public List<Produto> ObterTodos()
+        {
+            List<Produto> produtos = new List<Produto>();
+            string select = "select * from produto inner join categoria on produto.categoriaId = categoria.categoriaId";
+            _bd.AbrirConexao();
+            DataTable dt = _bd.ExecutarSelect(select);
+            _bd.FecharConexao();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                var prod = new Produto()
+                {
+                    Id = Convert.ToInt32(row[0]),
+                    Nome = row[1].ToString(),
+                    Categoria = new Categoria()
+                    {
+                        Id = Convert.ToInt32(row[2]),
+                        Nome = row[4].ToString()
+                    }
+                };
+
+                produtos.Add(prod);
+            }
+
+            return produtos;
         }
     }
 }
