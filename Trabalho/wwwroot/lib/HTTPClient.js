@@ -29,6 +29,20 @@
 
     },
 
+    postFormData: (url, formData) => {
+
+        let config = {
+            method: 'post',
+            body: formData,
+            headers: {
+                'Accept': "application/json",
+            }
+        }
+
+        return fetch(url, config);
+
+    },
+
     put: (url, dados) => {
 
         let config = {

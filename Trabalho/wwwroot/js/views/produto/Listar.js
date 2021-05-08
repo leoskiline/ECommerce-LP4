@@ -28,11 +28,15 @@ listarProduto = {
 
         let linhas = "";
         dados.forEach(item => {
-
-            linhas += `<tr data-produto-id=${item.id}>
-                            <td>${item.nome}</td>
-                            <td>${item.categoria.nome}</td>
-                       </tr>`
+            debugger
+            linhas += `<div class="card col-md-4 text-center" style="width:20%;margin-top:20px;margin-bottom:20px">
+                      <img class="card-img-top" src="/Produto/ObterImagem/${item.id}" width="150px" height="150px" alt="Card image">
+                      <div class="card-body">
+                        <h4 class="card-title">${item.nome}</h4>
+                        <p class="card-text">Categoria: ${item.categoria.nome}.</p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                      </div>
+                    </div>`
         });
 
         bodyResultado.innerHTML = linhas;

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Trabalho.Models;
@@ -46,6 +47,52 @@ namespace Trabalho.Controllers
                 id
             });
 
+        }
+
+        public IActionResult GravarImagem()
+        {
+            string msg = "";
+            var file = Request.Form.Files["imagem"];
+            int id = Convert.ToInt32(Request.Form["id"]);
+            if(file == null)
+            {
+                msg = "Arquivo obrigatorio.";
+            }
+            else if(file.Length > 153600)
+            {
+                msg = "Imagem muito grande.";
+            }
+            else
+            {
+                if(file.ContentType == "image/jpg" || file.ContentType == "image/jpeg" || file.ContentType == "image/png")
+                {
+                    MemoryStream ms = new MemoryStream();
+                    file.CopyTo(ms);
+                    byte[] binario = ms.ToArray();
+                    string ext = System.IO.Path.GetExtension(file.FileName);
+
+                    ProdutoService ps = new ProdutoService();
+                    ps.GravarImagem(binario,file.ContentType,ext,id);
+                }
+                else
+                {
+                    msg = "Formato de arquivo nao suportado.";
+                }
+            }
+            return Json(new
+            {
+                msg
+            });
+        }
+        [HttpGet]
+        public IActionResult ObterImagem(string id)
+        {
+            string arq = $@"C:\ProdutosImagens\{id}.jpg";
+            if (System.IO.File.Exists(arq))
+            {
+                return File(System.IO.File.ReadAllBytes(arq),"image/jpeg");
+            }
+            else return Content("Arquivo nao Encontrado");
         }
 
         [HttpGet]
