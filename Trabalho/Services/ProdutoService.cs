@@ -16,8 +16,9 @@ namespace Trabalho.Services
             string msg = "Falha ao Gravar Produto!";
             int id = 0;
             ProdutoDAL proDal = new ProdutoDAL();
-            if (produto.Nome.Length > 0 && produto.Categoria.Id != 0)
-                (id,msg) = proDal.Gravar(produto);
+            if(produto != null)
+                if (produto.Nome.Length > 0 && produto.Categoria.Id != 0)
+                    (id,msg) = proDal.Gravar(produto);
             return (id,msg);
         }
 

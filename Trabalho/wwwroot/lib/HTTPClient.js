@@ -35,7 +35,7 @@
             method: 'post',
             body: formData,
             headers: {
-                'Accept': "application/json",
+                'Accept': "application/json"
             }
         }
 
